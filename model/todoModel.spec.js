@@ -4,6 +4,7 @@ const Todo = require('./test-model');
 
 describe('todo model', () => {
   describe('insert()', () => {
+    //delete corrent entries to start test fresh
     beforeEach(async () => {
       await db('todo').truncate();
     });
@@ -28,14 +29,14 @@ describe('todo model', () => {
     });
   });
 
+  //Testing delete
   describe('delete()', () => {
-    //Testing delete
+    //delete corrent entries to start test fresh
     beforeEach(async () => {
       await db('todo').truncate();
     });
-
+    //1st check if is deleting one of the entries
     it('Delete Should return 1', async () => {
-      //1st check if is deleting one of the entries
       await Todo.insert({ todo: 'Go to the GYM' });
       await Todo.insert({ todo: 'Buy Milk' });
       await Todo.remove(1);
