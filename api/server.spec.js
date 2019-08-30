@@ -19,27 +19,5 @@ describe('server.js', () => {
       const res = await request(server).get('/');
       expect(res.type).toBe('application/json');
     });
-
-    //3nd- CREATE check if the request returns a 200 ok
-    it('should return a json object', async () => {
-      const res = await request(server).post('/');
-      expect(res.status).toEqual(200);
-    });
-    //4th- CREATE check if the request returns a json object
-    it('should return a json object', async () => {
-      const res = await request(server).post('/');
-      expect(res.type).toBe('application/json');
-    });
-
-    //5th- DELETE check if the request returns a 200 ok
-    it('should return a json object', async () => {
-      const res = await request(server).delete('/');
-      expect(res.status).toEqual(200);
-    });
-    //6th- DELETE check if the request returns a json object
-    it('should return a json object', async () => {
-      const res = await request(server).delete('/');
-      expect(res.type).toBe('application/json');
-    });
   });
 });

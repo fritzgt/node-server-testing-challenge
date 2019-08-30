@@ -2,8 +2,6 @@ const express = require('express');
 
 const server = express();
 
-const db = require('../test-model');
-
 server.use(express.json());
 
 //for testing purposes
