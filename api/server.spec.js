@@ -3,8 +3,12 @@ const request = require('supertest');
 const server = require('./server.js');
 
 describe('server.js', () => {
-  //1st- GET check if get request returns a 200 ok status
   describe('index route', () => {
+    it('should set the testing envirement', () => {
+      expect(process.env.DB_ENV).toBe('testing');
+    });
+
+    //1st- GET check if get request returns a 200 ok status
     it('should return a 200 ok status from index route', async () => {
       const res = await request(server).get('/');
       expect(res.status).toEqual(200);
@@ -38,5 +42,4 @@ describe('server.js', () => {
       expect(res.type).toBe('application/json');
     });
   });
-  //finsih
 });
